@@ -7,13 +7,16 @@ public class MoodAnalyser {
         this.message = message;
         analyseMood();
     }
-    public String analyseMood(){
-        if (message.contains("Sad"))
-            return "SAD";
-        else if (message.contains("Happy"))
-            return "HAPPY";
-        else
-            return "HAPPY";
+    public String analyseMood() {
+        try{
+            if (message.contains("Sad"))
+                return "SAD";
+            else if (message.contains("Happy"))
+                return "HAPPY";
 
+        }catch (NullPointerException e){
+            System.out.println("Please Enter the Valid Mood.");
+        }
+        return "";
     }
 }
